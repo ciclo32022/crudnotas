@@ -46,95 +46,97 @@ $alumnos =$sentencia->fetchall(PDO::FETCH_OBJ);
 
 
 
-<!--<div class="container">-->
-  <!---<div class="row vh-100 justify-content-center align-items-center">--->
+    <!--<div class="container">-->
+    <!---<div class="row vh-100 justify-content-center align-items-center">--->
     <div class="col-auto bg-light p-2">
-    
-  
-  
 
 
 
-<section class="text-center">
-  
 
-<!-- imagen azul de arriba----->
-<div class="p-5 bg-image" style="
+
+
+        <section class="text-center">
+
+
+            <!-- imagen azul de arriba----->
+            <div class="p-5 bg-image" style="
         background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
         height: 190px;
         "></div>
 
 
 
-<div class="card mx-4 mx-md-4 shadow-5-strong" style="
+            <div class="card mx-4 mx-md-4 shadow-5-strong" style="
         margin-top: -150px;
         background: hsla(0, 0%, 100%, 0.7);
         backdrop-filter: blur(30px);
         ">
 
 
-<div class="card-body py-3 px-md-5">
+                <div class="card-body py-3 px-md-5">
 
 
 
-  
-</div>
 
-
-  
+                </div>
 
 
 
-   <!--- <div class="container">---->
-
-        <div class="container text-center">
-            <h1 class=" mb-2 py-2">LISTADO DE ALUMNOS</h1>
-            <br>
-        </div>
 
 
 
-        <table class="table table-bordered border-dark table-sm  ">
-            <thead class="table-dark">
-                <tr>
-                    <th scope="col">Codigo</th>
-                    <th scope="col">Apellido paterno</th>
-                    <th scope="col">Apellido materno</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Parcial</th>
-                    <th scope="col">Final</th>
-                    <th scope="col">Promedio</th>
-                    <th scope="col">Editar</th>
-                    <th scope="col">Eliminar</th>
-                </tr>
-            </thead>
+                <!--- <div class="container">---->
+
+                <div class="container text-center">
+                    <h1 class=" mb-2 py-2">LISTADO DE ALUMNOS</h1>
+                    <br>
+                </div>
 
 
 
-            <?php
+                <table class="table table-bordered border-dark table-sm  ">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">Codigo</th>
+                            <th scope="col">Apellido paterno</th>
+                            <th scope="col">Apellido materno</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Parcial</th>
+                            <th scope="col">Final</th>
+                            <th scope="col">Promedio</th>
+                            <th scope="col">Editar</th>
+                            <th scope="col">Eliminar</th>
+                        </tr>
+                    </thead>
+
+
+
+                    <?php
 
      foreach ($alumnos as $dato){
 
         ?>
 
-            <tr>
+                    <tr>
 
-                <td><?php echo $dato->id_alumno; ?></td>
-                <td><?php echo $dato->ap_paterno; ?></td>
-                <td><?php echo $dato->ap_materno; ?></td>
-                <td><?php echo $dato->nombre; ?></td>
-                <td><?php echo $dato->ex_parcial; ?></td>
-                <td><?php echo $dato->ex_final; ?></td>
-                <td><?php echo ($dato->ex_final + $dato->ex_parcial) / 2 ; ?></td>
+                        <td><?php echo $dato->id_alumno; ?></td>
+                        <td><?php echo $dato->ap_paterno; ?></td>
+                        <td><?php echo $dato->ap_materno; ?></td>
+                        <td><?php echo $dato->nombre; ?></td>
+                        <td><?php echo $dato->ex_parcial; ?></td>
+                        <td><?php echo $dato->ex_final; ?></td>
+                        <td><?php echo ($dato->ex_final + $dato->ex_parcial) / 2 ; ?></td>
 
-                <td><a href="editar.php?id=<?php echo $dato->id_alumno; ?>" class="btn btn-warning " role="button" aria-pressed="true">Editar</a></td>
-                <td><a href="eliminar.php" class="btn btn-primary " role="button" aria-pressed="true">Eliminar</a></td>
+                        <td><a href="editar.php?id=<?php echo $dato->id_alumno; ?>" class="btn btn-warning "
+                                role="button" aria-pressed="true">Editar</a></td>
+                        <td><a href="eliminar.php?id=<?php echo $dato->id_alumno; ?>" class="btn btn-primary " role="button"
+                                aria-pressed="true">Eliminar</a></td>
 
 
 
 
-            </tr>
-            <?php
+                    </tr>
+                    <?php
 
 
         
@@ -145,138 +147,121 @@ $alumnos =$sentencia->fetchall(PDO::FETCH_OBJ);
 ?>
 
 
-            <!----insertar datos------>
+                    <!----insertar datos------>
 
 
 
-            <form method="POST" action="insertar.php">
-              
-                <div class="row">
-               <!------ <div class="col-md-6 mb-4">--->
-              
+                    <form method="POST" action="insertar.php">
+
+                        <div class="row">
+                            <!------ <div class="col-md-6 mb-4">--->
 
 
-                <table >
+
+                            <table>
 
 
-                <div class="p-5 bg-image" style="
+                                <div class="p-5 bg-image" style="
         background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
         height: 15px;
         "></div>
 
-                <div class="card mx-4 mx-md-4 shadow-5-strong" style="
+                                <div class="card mx-4 mx-md-4 shadow-5-strong" style="
         margin-top: -50px;
         background: hsla(0, 0%, 100%, 0.8);
         backdrop-filter: blur(30px);
         ">
 
-                    <h3 class="fw-bold mb-2 py-3">INGRESAR ALUMNOS</h3>
-                    <br>
+                                    <h3 class="fw-bold mb-2 py-3">INGRESAR ALUMNOS</h3>
+                                    <br>
 
 
-                    <div class="row d-flex justify-content-center">
-
-
-
-
-                   <div class="col-lg-3 col-md-3 col-xs-12 ">
-                   <div class="col-lg-12">
-        
-                        
-                        <input class="form-control" id="periodo" type="text" name="txtPaterno"
-                            placeholder="Apellido Paterno" autofocus required maxlength="15" size="6">
-                        <br>
-                        <input class="form-control" id="periodo" type="text" name="txtMaterno"
-                            placeholder="Apellido Materno" autofocus required maxlength="15" size="6">
-                        <br>
-                        <input class="form-control" id="periodo" type="text" name="txtNombre" placeholder="Nombre"
-                            autofocus required maxlength="15" size="6">
-                        <br>
-                        <input class="form-control" id="periodo" type="text" name="txtParcial"
-                            placeholder="Nota Parcial" autofocus required maxlength="15" size="6">
-                        <br>
-                        <input class="form-control" id="periodo" type="text" name="txtFinal" placeholder="Nota Final"
-                            autofocus required maxlength="15" size="6">
-                        <br>
+                                    <div class="row d-flex justify-content-center">
 
 
 
 
-                       
-
-                        <input type="hidden" name="oculto" value="1">
-
-                        <button type="reset" class="btn btn-outline-primary">Restablecer</button>
-                        
-                        <button type="submit" class="btn btn-outline-danger">Ingrese Alumno</button>
-                        <br>
-                        <br>
+                                        <div class="col-lg-3 col-md-3 col-xs-12 ">
+                                            <div class="col-lg-12">
 
 
-                        
-
-
-                        
-                       </div>
-                       </div>
-
-
-                    </div>
-    </>
+                                                <input class="form-control" id="periodo" type="text" name="txtPaterno"
+                                                    placeholder="Apellido Paterno" autofocus required maxlength="15"
+                                                    size="6">
+                                                <br>
+                                                <input class="form-control" id="periodo" type="text" name="txtMaterno"
+                                                    placeholder="Apellido Materno" autofocus required maxlength="15"
+                                                    size="6">
+                                                <br>
+                                                <input class="form-control" id="periodo" type="text" name="txtNombre"
+                                                    placeholder="Nombre" autofocus required maxlength="15" size="6">
+                                                <br>
+                                                <input class="form-control" id="periodo" type="text" name="txtParcial"
+                                                    placeholder="Nota Parcial" autofocus required maxlength="15"
+                                                    size="6">
+                                                <br>
+                                                <input class="form-control" id="periodo" type="text" name="txtFinal"
+                                                    placeholder="Nota Final" autofocus required maxlength="15" size="6">
+                                                <br>
 
 
 
 
 
 
-    </table>
-    </form>
+                                                <input type="hidden" name="oculto" value="1">
 
+                                                <button type="reset"
+                                                    class="btn btn-outline-primary">Restablecer</button>
 
-
-    <!----insertar datos---->
-
-
-
-
-
-
-
+                                                <button type="submit" class="btn btn-outline-danger">Ingrese
+                                                    Alumno</button>
+                                                <br>
+                                                <br>
 
 
 
 
 
 
+                                            </div>
+                                        </div>
 
 
-
-    </table>
-
-
-
-
-
-
+                                    </div>
+                                    </>
 
 
 
 
 
 
+                            </table>
+                    </form>
+                    <!----insertar datos---->
+
+
+                </table>
+                <br>
+                <h6>creado por miguel angel año 2023</h6>
+
+                
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+                    crossorigin="anonymous">
+                </script>
+
+        </section>
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-    </script>
 
-</section>
-
-
-
-
-</div>
+    </div>
+   
+   
+   
+  
 </body>
 
 </html>

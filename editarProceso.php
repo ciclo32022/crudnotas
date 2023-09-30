@@ -20,4 +20,11 @@ $final2 = $_POST["txt2Final"];
 //esta linea de codigo es para insertar datos y actualizarlos 
 $sentencia =   $conexion->prepare(" UPDATE alumno SET  ap_paterno = ?, ap_materno = ? , nombre= ? , ex_parcial = ?, ex_final = ? WHERE id_alumno = ? ;");
 $resultado = $sentencia->execute([$paterno2,$materno2,$nombre2,$parcial2,$final2,$id2]);
+
+if ($resultado === TRUE ){
+    header("Location: index.php");
+
+}else{
+   echo" Algo salio mal";
+}
 ?>
