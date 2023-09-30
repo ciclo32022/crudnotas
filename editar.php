@@ -75,7 +75,7 @@ $persona = $sentencia->fetch(PDO::FETCH_OBJ);
                                         value="<?php echo $persona->ex_parcial; ?>" placeholder="Nota Parcial" autofocus
                                         required maxlength="15" size="6">
                                     <br>
-                                    <input class="form-control" id="periodo" type="text" name="tx2tFinal"
+                                    <input class="form-control" id="periodo" type="text" name="txt2Final"
                                         placeholder="Nota Final" value="<?php echo $persona->ex_final; ?>" autofocus
                                         required maxlength="15" size="6">
 
@@ -97,6 +97,7 @@ $persona = $sentencia->fetch(PDO::FETCH_OBJ);
 
 
             <input type="hidden" name="oculto">
+            <input type="hidden" name ="id2" value="<?php echo $persona->id_alumno; ?>" >
             <button type="submit" class="btn btn-primary btn-block mb-4"> EDITAR ALUMNO </button>
             </form>
            

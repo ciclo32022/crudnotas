@@ -7,6 +7,7 @@ if (!isset($_POST["oculto"])) {
 
 include "model/Conexion.php";
 
+
 $paterno = $_POST["txtPaterno"];
 $materno = $_POST["txtMaterno"];
 $nombre = $_POST["txtNombre"];
